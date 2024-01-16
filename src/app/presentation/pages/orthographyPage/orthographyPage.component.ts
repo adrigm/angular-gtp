@@ -21,7 +21,7 @@ import { OpenAIService } from '../../services/openai.service';
 })
 export default class OrthographyPageComponent {
 
-  public OpenAIService = inject(OpenAIService);
+  public openAIService = inject(OpenAIService);
 
   public messages = signal<Message[]>([
     { text: 'Hola Mundo', isGpt: true },
@@ -39,14 +39,6 @@ export default class OrthographyPageComponent {
   ];
 
   handleMessageWithText(prompt: string) {
-    console.log(prompt);
-  }
-
-  handleMessageWithFile({ prompt, file }: TextMessageEvent) {
-    console.log({ prompt, file });
-  }
-
-  handleMessageWithSelect({ prompt, selectedOption }: TextMessageBoxEvent) {
-    console.log({ prompt, selectedOption });
+    this.isLoading.set(true);
   }
 }
