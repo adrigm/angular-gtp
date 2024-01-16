@@ -13,9 +13,15 @@
   </div>
 
   <!-- MessageBox -->
-  <app-text-message-box-file
+  <app-text-message-box-select
+    [placeholder]="'Escribe aqui el texto...'"
+    (onMessageSent)="handleMessageWithSelect($event)"
+    [options]="options"
+  />
+
+  <!-- <app-text-message-box-file
     [placeholder]="'Escribe aqui el texto...'"
     (onMessageSent)="handleMessageWithFile($event)"
-  />
+  /> -->
 
 </div>
